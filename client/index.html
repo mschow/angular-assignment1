@@ -37,6 +37,31 @@
     <button type="submit" class="btn btn-info">Submit</button>
   </form>
 
+  <form ng-submit="main.searchRepsByState(main.inputs.state)" class="form-inline">
+    <div class="form-group">
+      <label>Rep State</label>
+      <input class="form-control" type="string" ng-model="main.inputs.state" />
+    </div>
+  <button type="submit" class="btn btn-info">Submit</button>
+</form>
+
+<form ng-submit="main.searchSensByName(main.inputs.senName)" class="form-inline">
+  <div class="form-group">
+    <label>Senator Last Name</label>
+    <input class="form-control" type="string" ng-model="main.inputs.senName" />
+  </div>
+<button type="submit" class="btn btn-info">Submit</button>
+</form>
+
+<form ng-submit="main.searchSensByState(main.inputs.senState)" class="form-inline">
+  <div class="form-group">
+    <label>Senator State</label>
+    <input class="form-control" type="string" ng-model="main.inputs.senState" />
+  </div>
+<button type="submit" class="btn btn-info">Submit</button>
+</form>
+
+
       <div class="list-group">
         <!-- Repeat the LI for every rep in main.reps -->
         <li class="list-group-item" ng-repeat = "rep in main.reps">

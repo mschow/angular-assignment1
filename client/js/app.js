@@ -17,7 +17,25 @@ angular.module('RepsAppController', ['repsService'])
         reps.repsByName(name).then(function (data) {
           main.reps = data;
         });
-      }
+      };
+
+      main.searchRepsByState = function (state) {
+        reps.repsByState(state).then(function (data){
+          main.reps = data;
+        });
+      };
+
+      main.searchSensByName = function (senName) {
+        reps.sensByName(senName).then(function (data){
+          main.reps = data;
+        });
+      };
+
+      main.searchSensByState = function (senState) {
+        reps.sensByState(senState).then(function (data){
+          main.reps = data;
+        });
+      };
   });
 
 
@@ -34,13 +52,37 @@ angular
           return response.data;
         });
       },
-      
+
       repsByName: function (name) {
         return $http
         .get(host + 'reps/by-name/' + name)
         .then(function (response){
           return response.data;
         });
-      }
+      },
+
+      repsByState: function (state){
+        return $http
+        .get(host + 'reps/by-state/' + state)
+        .then(function (response){
+          return response.data;
+        });
+      },
+
+      sensByName: function (name){
+        return $http
+        .get(host + 'sens/by-name/' + name)
+        .then(function (response){
+          return response.data;
+        });
+      },
+
+      sensByState: function (state){
+        return $http
+        .get(host + 'sens/by-state/' + state)
+        .then(function (response){
+          return response.data;
+        });
+      },
     };
   });
