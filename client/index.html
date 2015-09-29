@@ -20,6 +20,29 @@
 
     <div ng-controller="MainCtrl as main" class="container">
 
+      <div class="radio">
+        <label>
+          <input type="radio" ng-model="main.congressType" value="reps">
+          Representatives
+        </label>
+      </div>
+
+      <div class="radio">
+        <label>
+          <input type="radio" ng-model="main.congressType" value="sens">
+          Senators
+        </label>
+      </div>
+
+    <form class="form-inline">
+      <select class="form-control" ng-model="main.criteria" ng-options="item as item.label for item in main.apis"></select>
+      <input class="form-control" type="text" ng-model="main.input" />
+      <button class="btn btn-info" type="submit" ng-click = "main.criteria.method(main.input)">Submit</button>
+    </form>
+
+
+
+<!--
 
       <form ng-submit="main.searchByZip(main.inputs.zip)" class="form-inline">
         <div class="form-group">
@@ -61,6 +84,7 @@
 <button type="submit" class="btn btn-info">Submit</button>
 </form>
 
+-->
 
       <div class="list-group">
         <!-- Repeat the LI for every rep in main.reps -->
